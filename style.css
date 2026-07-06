@@ -1,10 +1,14 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
-  background-color: #f2e8d5; /* warm beige */
-  color: #4a3f2f; /* deep coffee brown for readable text */
-  font-family: Garamond, "EB Garamond", Georgia, serif;
-  width: 60%;
+  background-image: url('backgroundgif.gif');
+  background-repeat: repeat; /* or 'no-repeat' if it's a full-screen scene */
+  background-size: cover; /* or a fixed px/percent size, or omit for tiled small gifs */
+  background-attachment: fixed; /* keeps it in place while scrolling */
 }
 @media screen and (max-width: 768px) {
   body {
@@ -15,28 +19,34 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+.site-gif,
+img {
+  display: block;
+  margin: 1em auto;
 }
 a:link {
-  color: #b8960c; /* citron / mustard gold */
+  color: #ffffff; /* citron / mustard gold */
 }
 a:visited {
-  color: #a3830a;
+  color: #2d06cb;
 }
 a:hover {
-  color: #e8c93b; /* brighter lemon on hover */
+  color: #ffffff; /* brighter lemon on hover */
   text-decoration: underline wavy;
 }
 h1, h2, h3, h4 {
-  color: #7a5c1e; /* deeper mustard-brown for headers */
+  color: #ffffff; /* deeper mustard-brown for headers */
 }
 hr {
   border: none;
-  border-top: 2px dashed #c9a84c; /* kitschy dashed citron line */
+  border-top: 2px dashed #ffffff; /* kitschy dashed citron line */
   margin: 1.2em 0;
 }
 table {
-  background-color: #f8f0dd; /* slightly lighter beige card */
-  border: 1px solid #d8c48f;
+  background-color: #ffffff; /* slightly lighter beige card */
+  border: 1px solid #ffffff;
   border-radius: 8px;
   padding: 4px;
 }
@@ -47,8 +57,8 @@ blockquote {
   max-width: 50%; /* Slightly thinner than body */
   margin: 1em auto; /* Centering */
   padding: 0.5em;
-  background-color: #fbf3de;
-  border-left: 4px solid #d8b12c;
+  background-color: #ffffff;
+  border-left: 4px solid #ffffff;
 }
 .blockquote-alt {
   max-width: 65%; /* Wider than 50%, still narrower than 60% */
@@ -59,4 +69,24 @@ sup {
   line-height: 0; /* Prevents extra space */
   position: relative;
   top: -0.3em; /* Adjusts placement to avoid excessive height changes */
+}
+
+/* Glitter cursor trail */
+.glitter-sparkle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 14px;
+  user-select: none;
+  z-index: 9999;
+  animation: glitter-fade 0.7s ease-out forwards;
+}
+@keyframes glitter-fade {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--drift, 0px), -24px) scale(0.4) rotate(90deg);
+  }
 }
